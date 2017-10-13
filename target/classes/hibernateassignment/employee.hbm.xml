@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="hibernateassignment.Employee" table="employee">
+		<id column="EMPLOYEE_ID" name="employeeId">
+			<generator class="increment" />
+		</id>
+		<property column="NAME" name="name" />
+		
+		<many-to-one name="role" class="hibernateassignment.Role" column="ROLE_ID" cascade="all"/>
+
+		<set cascade="all" name="tasks" table="task" >
+			<key column="EMPLOYEE_ID" />
+			<one-to-many class="hibernateassignment.Task" />
+		</set>
+	</class>
+</hibernate-mapping>

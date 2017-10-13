@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="hibernatedemo.Hat" table="HAT">
+    <id column="HAT_ID" name="hatid">
+    <generator class="increment"/>
+    </id>
+    <property column="PERSON_ID" name="personid"/>
+    <property column="COLOR" name="color"/>
+    <property column="SIZE" name="size"/> 
+  </class>
+</hibernate-mapping>
